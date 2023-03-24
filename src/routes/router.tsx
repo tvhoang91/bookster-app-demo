@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import Home from "./home/Home"
 import Layout from "./layout/Layout"
+import SettingsFormsProvider from "./settings/context/SettingsFormsProvider"
 import Settings from "./settings/Settings"
 
 const router = createBrowserRouter([
@@ -14,7 +15,9 @@ const router = createBrowserRouter([
       },
       {
         path: "settings/:tabId",
-        element: <Settings />,
+        element: (<SettingsFormsProvider>
+          <Settings />
+        </SettingsFormsProvider>)
       },
     ],
   },
