@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
-import Home from "./home/home"
-import Layout from "./Layout"
-import Settings from "./settings/settings"
+import Home from "./home/Home"
+import Layout from "./layout/Layout"
+import Settings from "./settings/Settings"
 
 const router = createBrowserRouter([
   {
@@ -9,11 +9,11 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "",
+        index: true,
         element: <Home />,
       },
       {
-        path: "settings",
+        path: "settings/:tabId",
         element: <Settings />,
       },
     ],
